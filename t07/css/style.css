@@ -1,0 +1,26 @@
+.main_div {
+    text-align: center;
+    border: 2px solid black;
+    padding: 40px;
+}
+
+.table_input {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.free_member_input {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+#table_html {
+    background-color: red;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+
+
+}
