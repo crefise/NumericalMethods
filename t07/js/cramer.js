@@ -21,7 +21,7 @@ return det;
 }
  
 
-function calcRoots (arr1, arr2) {
+function cramer (arr1, arr2) {
     slau = arr1.slice();
     for (let index = 0; index < arr2.length; index++) {
         slau[index].push(arr2[index]);

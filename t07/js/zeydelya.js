@@ -1,5 +1,5 @@
   /* https://studfile.net/preview/2377683/page:4/ */
-    function zeidel(a,b) {
+    function zeydelya(a,b) {
       x = new Array(b.length)
       x.fill(0);
       for (let i = 0; i < 1000; i++) {

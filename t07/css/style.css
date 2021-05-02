@@ -17,10 +17,13 @@
 }
 
 #table_html {
-    background-color: red;
     margin-left: 50%;
     transform: translateX(-50%);
+}
 
-
-
+.error_text {
+    background-color: red;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 20px;
 }

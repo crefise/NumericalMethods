@@ -1,13 +1,4 @@
-var arr1 = [[5,  5, -2],
-            [3, 3,  -3],
-            [4,  2, -5]];
 
-var arr2 = [1,2,3];
- 
-
-
-
-console.log(Answers(arr1, arr2));
  
 function Iteration(iter_item, n, m) { //Функция итеррация
     for(iter_item=0;iter_item<(n-1);iter_item++) { //Цикл выполнения итерраций
@@ -34,7 +25,7 @@ function SwapRows(iter_item, n, m) {
         } 
     }
 }
-function Answers(arr1, arr2) {//Функция поиска и вывода корней
+function gausa(arr1, arr2) {//Функция поиска и вывода корней
     n = arr2.length;
     m = arr1.slice();
     for (let index = 0; index < arr2.length; index++) {
