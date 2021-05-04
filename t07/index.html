@@ -6,30 +6,35 @@
     <link rel="stylesheet" href="./css/style.css"
 </head>
 <body>
+    <div class = "m_div">
     <form class = "my_form" method = "post">
     <div class = "main_div">
-        <div>
-            <h2>Choise your method</h2>
-            <input type= "radio" name = "method" required value="cramer">cramer 
-            <input type= "radio" name = "method" required value="gausa">gausa 
-            <input type= "radio" name = "method" required value="zeydelya">zeydelya 
-            <input type= "radio" name = "method" required value="NaN">NaN
-            <div>
-                <input type="number" min="1" max="10" id = "size_matrix_html">
-            </div>
+        <div class = "j_div">
+            <h1>Matrix calculator</h1>
+            <span class = "method_type_button"><input type= "radio" name = "method" required value="Cramer" id = "Cramer"><label for ="Cramer">Cramer</label> </span>
+            <span class = "method_type_button"><input type= "radio" name = "method" required value="Gaus" id = "gaGaususa"><label for ="Gaus">Gaus</label></span>
+            <span class = "method_type_button"><input type= "radio" name = "method" required value="Saidel" id = "Saidel"><label for ="Saidel">Saidel</label></span> </span>
+            <span class = "method_type_button"><input type= "radio" name = "method" required value="Jacobi" id = "Jacobi"><label for ="Jacobi">Jacobi</label></span></span>
+            <span class = "method_type_button"><input type= "radio" name = "method" required value="Gaus-Seidel" id = "Gaus-Seidel"><label for ="Gaus-Seidel">Gaus-Seidel</label></span></span>
+        </div>
 
+        <div class = "j_div">
+            <input type="number" min="1" max="10" id = "size_matrix_html">
+            <input type= "file" class = "input_file" onchange="load_from_file(this)">
         </div>
 
         <div id = "table_html">
 
         </div>
-        <div><button>Count</button></div>
+        <div class = "button_div"><button>Calculate</button></div>
         <div id = "result_box"></div>
     </div>
-
-    <script src= "js/cramer.js"></script>
-    <script src= "js/gausa.js"></script>
-    <script src= "js/zeydelya.js"></script>
+    </div>
+    <script src= "js/Cramer.js"></script>
+    <script src= "js/Gaus.js"></script>
+    <script src= "js/Seidel.js"></script>
+    <script src= "js/Jacobi.js"></script>
+    <script src= "js/Gaus-Seidel.js"></script>
     <script src="js/main.js"></script>
     </form>
 </body>

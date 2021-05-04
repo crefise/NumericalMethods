@@ -31,6 +31,12 @@ function cramer (arr1, arr2) {
 
     for (var roots = [], j = 0, J = slau.length; j < J; j++)
         roots [j] = compDeterm(formMatrix (slau, j + 1)) / d0;
+
+        for (let index = 0; index < roots.length; index++) {
+           if (!isFinite(roots[index])) {
+               throw new UserException("Для этой СЛАУ не подходит метод Крамера!");
+           }
+        }
         return roots;
 }
 /*

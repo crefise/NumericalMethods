@@ -1,7 +1,18 @@
-.main_div {
+body {
+
+    background-color: rgb(138, 93, 63);
+
+}
+
+.m_div {
     text-align: center;
-    border: 2px solid black;
-    padding: 40px;
+    background-color: rgb(177, 169, 165);
+
+}
+
+.main_div {
+
+
 }
 
 .table_input {
@@ -16,14 +27,44 @@
     margin-left: 20px;
 }
 
-#table_html {
-    margin-left: 50%;
-    transform: translateX(-50%);
+
+
+
+h1 {
+    font-family: monospace;
+    font-size: 55px;
 }
 
-.error_text {
-    background-color: red;
-    border-radius: 30px;
-    padding: 20px;
+.method_type_button {
+    user-select: none;
+    border: 1px black solid;
+    background-color: rgb(124, 106, 98);
+    border-radius: 20px;
+    margin: 20px;
+    margin-bottom: 50px;
     font-size: 20px;
+    padding: 10px;
+}
+
+.j_div {
+    margin: 50px;
+}
+
+#result_box {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    background-color: rgb(124, 106, 98);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    width: 50%;
+  
+}
+
+.button_div button{
+    background-color: rgb(124, 106, 98);
+    font-size: 30px;
+    padding: 15px;
+    border-radius: 15px;
+    outline: none;;
 }

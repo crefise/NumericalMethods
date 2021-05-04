@@ -43,5 +43,10 @@ function gausa(arr1, arr2) {//Функция поиска и вывода кор
         }
         l[i] = m[i][n] - k;
     }
+    for (let index = 0; index < l.length; index++) {
+        if (!isFinite(l[index])) {
+            throw new UserException("Для этой СЛАУ не подходит метод Гаусса!");
+        }
+     }
     return l;
 }
