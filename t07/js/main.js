@@ -2,6 +2,54 @@ function UserException(message) {
     this.message = message;
  }
 
+
+
+
+
+ function corr_sol(x) {
+    for (let index = 0; index < free_members.length; index++) {
+        let res = 0;
+        for (let i = 0; i < free_members.length; i++) {
+            res += (matrix_global[index][i] * x[i]);
+        }
+        if (res < free_members[index] + 0.001 && res > free_members[index] - 0.001) {
+            res = 0;
+            continue;
+        }
+        else {
+            return false;
+        }
+        
+    }
+    return true;
+ }
+
+
+var matrix_global;
+var free_members;
+var x_res;
+ function print_check_button() {
+
+
+
+    let check_buttom = document.createElement("div");
+    check_buttom.classList.add("result_button");
+
+    
+    if(corr_sol(x_res)) {
+        check_buttom.innerHTML = "true";
+    } else {
+        check_buttom.innerHTML = "false";
+    }
+
+
+    document.getElementById("result_box").appendChild(check_buttom);
+
+    
+ }
+
+
+
 function get_user_input() {
     let size = document.getElementById("size_matrix_html").value;
 
@@ -24,7 +72,7 @@ function get_user_input() {
 
     // Получаем свободные члены
     let free_input_table = document.getElementsByClassName("free_member_input");
-    let free_members = new Array(size);
+    free_members = new Array(size);
 
     for (let i = 0; i < size; i++) {
         free_members[i] = parseInt(free_input_table[i].value);
@@ -33,33 +81,47 @@ function get_user_input() {
 
     console.log(free_members);
 
+    matrix_global = matrix.slice();
+
     return [size, matrix, free_members];
 }
 
 function get_solve_sle(matrix, free_members) {
    let method_name = document.querySelector('input[name="method"]:checked').value;
+   console.log(matrix);
+
 
     if (method_name == "Cramer") {
+        console.log("start2: " + matrix);
+        console.log(matrix);
         if (free_members.length > 4) {
             throw new UserException("Для метода крамера максимум 4 неизвесных!");
         }
-        return cramer(matrix, free_members);
+        x_res =  cramer(matrix.slice(), free_members);
+        return x_res;
     } 
     
     if (method_name == "Gaus") {
-        return gausa(matrix, free_members);
+        console.log("start2: " + matrix);
+        x_res = gausa(createCopy(matrix), free_members);
+        return x_res;
     } 
 
-    if (method_name == "Seidel") {
-        return zeydelya(matrix, free_members);
+    if (method_name == "Saidel") {
+        console.log("start2: " + matrix);
+        console.log(matrix.slice());
+        x_res = zeydelya(createCopy(matrix), free_members);
+        return x_res;
     } 
 
     if (method_name == "Jacobi") {
-        return Jacobi(matrix, free_members);    
+        x_res =   Jacobi(createCopy(matrix), free_members);    
+        return x_res;
     } 
 
     if (method_name == "Gaus-Seidel") {
-        return Gauss_Seidel(matrix, free_members);    
+        x_res =  Gauss_Seidel(createCopy(matrix), free_members);   
+        return x_res; 
     } 
 
     return NaN;
@@ -71,22 +133,30 @@ function print_result(result) {
     if (document.getElementsByClassName("result_text")[0]) {
         document.getElementsByClassName("result_text")[0].remove();
     }
+    if (document.getElementsByClassName("result_button")[0]) {
+        document.getElementsByClassName("result_button")[0].remove();
+    }
 
     let result_html = document.createElement("span");
     result_html.classList.add("result_text");
     let str = "<h1>" + document.querySelector('input[name="method"]:checked').value +"</h1>"+ "<br>";
     
     for (let index = 0; index < result.length; index++) {
-        str+= "x(" + index +"): " + (result[index]) + "<br>";
+        str+= "x(" + index +"): " + (Number(result[index]).toFixed(5)) + "<br>";
     }
 
     result_html.innerHTML = str;
 
     document.getElementById("result_box").appendChild(result_html);
+
+    print_check_button();
 }
 function print_error(message) {
     if (document.getElementsByClassName("result_text")[0]) {
         document.getElementsByClassName("result_text")[0].remove();
+    }
+    if (document.getElementsByClassName("result_button")[0]) {
+        document.getElementsByClassName("result_button")[0].remove();
     }
     let result_html = document.createElement("span");
     result_html.classList.add("result_text");

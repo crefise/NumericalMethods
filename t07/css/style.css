@@ -51,13 +51,15 @@ h1 {
 }
 
 #result_box {
+    margin-top: 30px;
     margin-left: 50%;
     transform: translateX(-50%);
     font-size: 35px;
     background-color: rgb(124, 106, 98);
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    width: 50%;
+    width: 60%;
+    padding: 20px;
   
 }
 

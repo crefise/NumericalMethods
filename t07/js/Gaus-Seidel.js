@@ -53,18 +53,21 @@ function Gauss_Seidel(matrix, b) {
         matrix[i][i] = matrix[i][n]
         matrix[i][n] = tmp
     }
-
+    let counter = 0;
     do {
-        console.log('iterations.....')
         for (let i = 0; i < n; i++) {
             x[i] = f(matrix[i], i, x_tmp)
             e[i] = Math.abs(x_tmp[i] - x[i])
             x_tmp[i] = x[i];
             if (!isFinite(x[i])) {
-                return false;
+                throw new UserException("Для этой СЛАУ не подходит метод  Гаусса-Сельделя!");
             }
+        }
+        counter++;
+        if (counter > 10000) {
+            throw new UserException("Для этой СЛАУ не подходит метод  Гаусса-Сельделя!");
         }
     } while(all_true(e, eps));
 
-    return x
+    return x;
 }

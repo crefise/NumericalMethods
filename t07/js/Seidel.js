@@ -1,10 +1,18 @@
   /* https://studfile.net/preview/2377683/page:4/ */
     function zeydelya(a,b) {
+      console.log('zeydelya');
+
       x = new Array(b.length)
       x.fill(0);
       for (let i = 0; i < 1000; i++) {
         x = zeidel_func(a, x ,b)
       }
+      for (let index = 0; index < x.length; index++) {
+        if (!isFinite(x[index])) {
+            throw new UserException("Для этой СЛАУ не подходит метод  Сельделя!");
+        }
+      }
+      console.log("test:"+x);
       return x;
     }
 
@@ -20,6 +28,7 @@
           }
           x[j] = d / a[j][j]
       }
+
       return x; 
   }
          
@@ -30,3 +39,5 @@
            
   console.log(x);
   */
+
+

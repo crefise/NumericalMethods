@@ -42,7 +42,7 @@ function Jacobi(matrix, b) {
         matrix[i][i] = matrix[i][n];
         matrix[i][n] = tmp;
     }
-
+    let counter = 0;
 
     do {
         for (let i = 0; i < n; i++) {
@@ -52,10 +52,16 @@ function Jacobi(matrix, b) {
         for (let i = 0; i < n; i++) {
             x_tmp[i] = x[i];
         }
+        counter++;
+        if (counter > 10000) {
+            throw new UserException("Для этой СЛАУ не подходит метод  Гаусса-Сельделя!");
+        }
     } while(all_true(e, eps));
 
     return x;
 }
+
+
 /*
 
 var arr1 = [[10,  1 ,-1],
