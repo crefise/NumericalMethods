@@ -6,23 +6,7 @@ function UserException(message) {
 
 
 
- function corr_sol(x) {
-    for (let index = 0; index < free_members.length; index++) {
-        let res = 0;
-        for (let i = 0; i < free_members.length; i++) {
-            res += (matrix_global[index][i] * x[i]);
-        }
-        if (res < free_members[index] + 0.001 && res > free_members[index] - 0.001) {
-            res = 0;
-            continue;
-        }
-        else {
-            return false;
-        }
-        
-    }
-    return true;
- }
+
 
 
 var matrix_global;
@@ -110,7 +94,7 @@ function get_solve_sle(matrix, free_members) {
     if (method_name == "Saidel") {
         console.log("start2: " + matrix);
         console.log(matrix.slice());
-        x_res = zeydelya(createCopy(matrix), free_members);
+        x_res = Saidel(createCopy(matrix), free_members);
         return x_res;
     } 
 
@@ -119,8 +103,8 @@ function get_solve_sle(matrix, free_members) {
         return x_res;
     } 
 
-    if (method_name == "Gaus-Seidel") {
-        x_res =  Gauss_Seidel(createCopy(matrix), free_members);   
+    if (method_name == "Gauss-Jordan") {
+        x_res =  Gauss_Jordan(createCopy(matrix), free_members);   
         return x_res; 
     } 
 
@@ -215,15 +199,7 @@ document.getElementsByClassName("my_form")[0].onsubmit = (event) => {
 
 
 }
-// let file = document.getElementsByClassName("input_file")[0].onchange = () => {
 
-
-//     let file = new FileReader();
-
-//     let text = file.readAsText(document.getElementsByClassName("input_file")[0].value);
-
-//     console.log(text);
-// }
 function load_from_file(object) {
     let file = object.files[0];
 

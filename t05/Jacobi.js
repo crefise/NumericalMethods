@@ -42,8 +42,6 @@ function Jacobi(matrix, b) {
         matrix[i][i] = matrix[i][n];
         matrix[i][n] = tmp;
     }
-
-
     do {
         for (let i = 0; i < n; i++) {
             x[i] = func(matrix[i], i, x_tmp)
@@ -56,16 +54,3 @@ function Jacobi(matrix, b) {
 
     return x;
 }
-/*
-
-var arr1 = [[10,  1 ,-1],
-            [1, 10,  -1],
-            [-1,  1, 10]];
-
-			var arr2 = [11,10,10];
-
-
-
-			console.log(Jacobi(arr1,arr2));
-
-*/

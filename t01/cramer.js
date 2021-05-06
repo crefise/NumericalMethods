@@ -33,13 +33,3 @@ function calcRoots (arr1, arr2) {
         roots [j] = compDeterm(formMatrix (slau, j + 1)) / d0;
         return roots;
 }
-/*
-var arr1 = [[5,  5, -2],
-            [3, 3,  -3],
-            [4,  2, -5]];
-
-var arr2 = [1,2,3]
-
-
-alert(calcRoots(arr1, arr2));
-*/

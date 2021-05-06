@@ -14,8 +14,8 @@
             <span class = "method_type_button"><input type= "radio" name = "method" required value="Cramer" id = "Cramer"><label for ="Cramer">Cramer</label> </span>
             <span class = "method_type_button"><input type= "radio" name = "method" required value="Gaus" id = "Gaus"><label for ="Gaus">Gaus</label></span>
             <span class = "method_type_button"><input type= "radio" name = "method" required value="Saidel" id = "Saidel"><label for ="Saidel">Saidel</label></span> </span>
+            <span class = "method_type_button"><input type= "radio" name = "method" required value="Gauss-Jordan" id = "Gauss-Jordan"><label for ="Gauss-Jordan">Gauss-Jordan</label></span></span>
             <span class = "method_type_button"><input type= "radio" name = "method" required value="Jacobi" id = "Jacobi"><label for ="Jacobi">Jacobi</label></span></span>
-            <span class = "method_type_button"><input type= "radio" name = "method" required value="Gaus-Seidel" id = "Gaus-Seidel"><label for ="Gaus-Seidel">Gaus-Seidel</label></span></span>
         </div>
 
         <div class = "j_div">
@@ -30,13 +30,17 @@
         <div id = "result_box"></div>
     </div>
     </div>
-    <script src="js/correct_func.js"></script>
-    <script src= "js/Cramer.js"></script>
-    <script src= "js/Gaus.js"></script>
-    <script src= "js/Seidel.js"></script>
-    <script src= "js/Jacobi.js"></script>
-    <script src= "js/Gaus-Seidel.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/mx_matrix_junction.js"></script>
+    <script src="js/mx_check_correct.js"></script>
+    <script src="js/mx_corr_solution.js"></script>
+
+    <script src= "js/method_Cramer.js"></script>
+    <script src= "js/method_Gaus.js"></script>
+    <script src= "js/method_Seidel.js"></script>
+    <script src= "js/method_Gauss_Jordan.js"></script>
+    <script src= "js/method_Jacobi.js"></script>
+
+    <script src="js/mx_main.js"></script>
     </form>
 </body>
 </html>

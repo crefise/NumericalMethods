@@ -54,24 +54,9 @@ function Jacobi(matrix, b) {
         }
         counter++;
         if (counter > 10000) {
-            throw new UserException("Для этой СЛАУ не подходит метод  Гаусса-Сельделя!");
+            throw new UserException("Incorect matrix for this method.");
         }
     } while(all_true(e, eps));
 
     return x;
 }
-
-
-/*
-
-var arr1 = [[10,  1 ,-1],
-            [1, 10,  -1],
-            [-1,  1, 10]];
-
-			var arr2 = [11,10,10];
-
-
-
-			console.log(Jacobi(arr1,arr2));
-
-*/

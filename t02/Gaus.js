@@ -1,16 +1,3 @@
-/*
-var arr1 = [[5,  5, -2],
-            [3, 3,  -3],
-            [4,  2, -5]];
-
-var arr2 = [1,2,3];
- 
-
-
-
-console.log(Answers(arr1, arr2));
-*/
- 
 function Iteration(iter_item, n, m) { //Функция итеррация
     for(iter_item=0;iter_item<(n-1);iter_item++) { //Цикл выполнения итерраций
         if (m[iter_item][iter_item] == 0) SwapRows(iter_item,size,m); //Проверка на ноль
@@ -36,9 +23,11 @@ function SwapRows(iter_item, n, m) {
         } 
     }
 }
-function Answers(arr1, arr2) {//Функция поиска и вывода корней
+
+function gausa(arr1, arr2) {//Функция поиска и вывода корней
     n = arr2.length;
-    m = arr1.slice();
+    m = createCopy(arr1);
+    console.log("le:" + arr2.length);
     for (let index = 0; index < arr2.length; index++) {
         m[index].push(arr2[index]);
     }
@@ -54,5 +43,10 @@ function Answers(arr1, arr2) {//Функция поиска и вывода ко
         }
         l[i] = m[i][n] - k;
     }
+    for (let index = 0; index < l.length; index++) {
+        if (!isFinite(l[index])) {
+            throw new UserException("Incorect matrix for this method.");
+        }
+     }
     return l;
 }
