@@ -1,5 +1,5 @@
 body {
-
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(124, 106, 98);
 
 }
@@ -13,6 +13,12 @@ body {
 .main_div {
 
 border: 4px black solid;
+}
+
+    table {
+        margin-left: 50%;
+        margin-bottom: 30px;
+        transform: translateX(-50%);
 }
 
 .table_input {
@@ -31,7 +37,7 @@ border: 4px black solid;
 
 
 h1 {
-    font-family: monospace;
+
     font-size: 55px;
 }
 
