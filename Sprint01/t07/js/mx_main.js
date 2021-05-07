@@ -2,13 +2,6 @@ function UserException(message) {
     this.message = message;
  }
 
-
-
-
-
-
-
-
 var matrix_global;
 var free_members;
 var x_res;
@@ -33,8 +26,6 @@ var x_res;
 
     
  }
-
-
 
 function get_user_input() {
     let size = document.getElementById("size_matrix_html").value;
