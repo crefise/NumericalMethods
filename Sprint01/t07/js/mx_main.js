@@ -22,8 +22,10 @@ var x_res;
     
     if(corr_sol(x_res)) {
         check_buttom.innerHTML = "true";
+        check_buttom.style.color = "green";
     } else {
         check_buttom.innerHTML = "false";
+        check_buttom.style.color = "red";
     }
 
 
