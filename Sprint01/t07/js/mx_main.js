@@ -79,7 +79,7 @@ function get_solve_sle(matrix, free_members) {
         console.log("start2: " + matrix);
         console.log(matrix);
         if (free_members.length > 4) {
-            throw new UserException("Для метода крамера максимум 4 неизвесных!");
+            throw new UserException("Max 4-n matrix for Cramer`s method");
         }
         x_res =  cramer(matrix.slice(), free_members);
         return x_res;

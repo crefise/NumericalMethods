@@ -1,6 +1,6 @@
 body {
 
-    background-color: rgb(138, 93, 63);
+    background-color: rgb(124, 106, 98);
 
 }
 
@@ -12,7 +12,7 @@ body {
 
 .main_div {
 
-
+border: 4px black solid;
 }
 
 .table_input {
