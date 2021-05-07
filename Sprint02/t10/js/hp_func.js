@@ -17,3 +17,12 @@ function func2(x) {
 function func3(x) {
     return x*x + 4*x + 25;
 }
+
+function delete_result() {
+    let arr = document.getElementsByClassName("result_div");
+    let size = arr.length;
+
+    for (let index = 0; index < size; index++) {
+        arr[0].remove();
+    }
+}
