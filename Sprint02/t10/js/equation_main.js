@@ -15,8 +15,8 @@ function print_input_menu_differential_equation() {
         "<div class = 'user_data_div'>" +
             "<select>" + 
                 "<option>y=2*x</option>" +
-                "<option>y=2eps(x)</option>" +
-                "<option>y=x*3+25</option>" + 
+                "<option>y=sin(x)</option>" +
+                "<option>y=x*x + 4*x + 25</option>" + 
             "</select>" +
         "</div>" +
         

@@ -53,5 +53,11 @@ select {
     font-size: 25px;
     background-color: rgb(76, 112, 117);
     padding: 10px;
-    outline: none;;
+    outline: none;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.result_text {
+    font-size: 40px;
 }
