@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1</title>
+</head>
+<body>
+    <h1>
+        Set operations
+    </h1>
+
+
+    <form id = "form_main">
+    <div class = "set_input">
+
+            <div class ="set">
+                <div class = "block_input">
+                    <h2>Input A:</h2>
+                    <textarea class = "set_value"></textarea>
+
+                </div>
+                <div class = "block_input">
+                    <h2>Input B:</h2>
+                    <textarea class = "set_value"></textarea>
+                </div>
+            </div>
+
+            <div class = "list_operations">
+                <input type="radio" name = "operations" value = "crossing" id = "crossing"><label for = "crossing">A∩B</label>
+                <input type="radio" name = "operations" value = "union" id = "union"><label for = "union">A∪B</label>
+                <input type="radio" name = "operations" value = "difference" id = "difference"><label for = "difference">A\B</label>
+                <input type="radio" name = "operations" value = "difference_swap" id = "difference_swap"><label for = "difference_swap">B\A</label>
+                <input type="radio" name = "operations" value = "sumetric_difference" id = "sumetric_difference"><label for = "sumetric_difference">A△B</label>
+                <input type="radio" name = "operations" value = "included" id = "included"><label for = "included">A⊆B</label>
+                <input type="radio" name = "operations" value = "included_swap" id = "included_swap"><label for = "included_swap">B⊆A</label>
+
+            </div>
+
+            <div class = "calculate_div">
+                <button id = "form_main_button">Calculate</button>
+            </div>
+    </div>
+</form>
+
+    <div class = "result_box"></div>
+    
+    
+    
+    <style>
+        body{
+            text-align: center;
+        }
+        .block_input {
+            display: inline-block;
+        }
+        
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>
