@@ -79,8 +79,10 @@ function print_result(result) {
     for (let index = 0; index < result.length; index++) {
        str += result[index] + "<br>";
     }
-
-    result_html.innerHTML = str;
+    if (result === true || result === false)
+        result_html.innerHTML = result;
+    else 
+        result_html.innerHTML = str;
 
     document.getElementsByClassName("result_box")[0].appendChild(result_html);
 
