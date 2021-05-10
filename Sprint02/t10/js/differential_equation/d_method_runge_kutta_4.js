@@ -2,7 +2,7 @@
 
 
 
-function d_method_eiler (func, a,b,y0,N) {
+function d_runge_kutta_4 (func, a,b,y0,N) {
 
   let h = (b-a)/N;
 

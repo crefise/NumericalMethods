@@ -33,15 +33,7 @@ function print_input_menu_integral() {
         "</div>";
     document.body.appendChild(integral_main_div);
 }
-function print_result(x) {
-    let res = document.createElement("div");
-    res.classList.add("result_div");
-    res.classList.add("result_text");
 
-    res.innerHTML = x;
-
-    document.body.appendChild(res);
-}
 function set_integral_button() {
 
     let button = document.getElementById("get_integral_button");
@@ -70,27 +62,27 @@ function set_integral_button() {
         let name;
         switch (parseInt(document.getElementsByClassName("select_method")[0].value)) {
             case 1:
-                name = "Left Rectangle - ";
+                name = "Left Rectangle";
                 method = method_left_rectangle;
                 break;
             case 2:
-                name = "Right Rectangle - ";
+                name = "Right Rectangle";
                 method = method_right_rectangle;
                 break;
             case 3:
-                name = "Middle Rectangle - ";
+                name = "Middle Rectangle";
                 method = method_rectangle;
                 break;
             case 4:
-                name = "Trapezoid - ";
+                name = "Trapezoid";
                 method = method_trapezoid;
                 break;
             case 5:
-                name = "Parabol - ";
+                name = "Parabol";
                 method = method_parabol;
                 break;
             default:
-                name = "Left Rectangle - ";
+                name = "Left Rectangle";
                 method = method_left_rectangle;
                 break;
         }
@@ -106,7 +98,13 @@ function set_integral_button() {
 
         delete_result();
 
-        print_result( name + method(func,a,b,N).toFixed(5));
+
+        let x_arr = new Array(1);
+        x_arr[0] = method(func,a,b,N).toFixed(5);
+
+        let name_arr = new Array(1);
+        name_arr[0] = name;
+        print_result( name_arr , x_arr);
     }
 
 }
@@ -150,11 +148,22 @@ function set_explore_button() {
         
         delete_result();
 
-        print_result("Left Rectangle - " + method_left_rectangle(func,a,b,N).toFixed(5));
-        print_result("Right Rectangle - " + method_right_rectangle(func,a,b,N).toFixed(5));
-        print_result("Middle Rectangle - " + method_rectangle(func,a,b,N).toFixed(5));
-        print_result("Parabol Rectangle - " + method_parabol(func,a,b,N).toFixed(5));
-        print_result("Trapezoid Rectangle - " + method_trapezoid(func,a,b,N).toFixed(5));
+        let name_arr = [
+            "Left Rectangle",
+            "Right Rectangle",
+            "Middle Rectangle",
+            "Parabol Rectangle",
+            "Trapezoid Rectangle"
+        ];
+        let x_arr = [
+            method_left_rectangle(func,a,b,N).toFixed(5),
+            method_right_rectangle(func,a,b,N).toFixed(5),
+            method_rectangle(func,a,b,N).toFixed(5),
+            method_parabol(func,a,b,N).toFixed(5),
+            method_trapezoid(func,a,b,N).toFixed(5)
+        ];
+
+        print_result(name_arr, x_arr);
     }
 
 }
@@ -172,3 +181,8 @@ button_inegral.onclick = () => {
 }
 
 
+function fix_arr(x_arr) {
+    for (let i = 0; i < x_arr.length; i++) {
+        x_arr[i] = Number(x_arr[i]).toFixed(3);
+    }
+}

@@ -26,3 +26,43 @@ function delete_result() {
         arr[0].remove();
     }
 }
+
+function de_func1(x,y) {
+    return x*y;
+}
+
+function de_func2(x,y) {
+    return Math.sin(x)*y;
+}
+
+function de_func3(x,y) {
+    return x*x+y*y;
+}
+
+function print_result(name_arr,x_arr) {
+    let res = document.createElement("div");
+    res.classList.add("result_div");
+    res.classList.add("result_text");
+
+    let str = "<table>";
+    
+
+    for (let i = 0; i < name_arr.length; i++) {
+        str += "<tr>";
+
+        str += "<td>";
+        str += name_arr[i];
+        str += "</td>";
+
+        str += "<td>";
+        str += x_arr[i];
+        str += "</td>";
+
+        str += "</tr>";
+    }
+
+    str += "</table>";
+
+    res.innerHTML = str;
+    document.body.appendChild(res);
+}
